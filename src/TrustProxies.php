@@ -89,7 +89,7 @@ class TrustProxies
     }
 
     private function setTrustedProxyIpAddressesToTheCallingIp($request) {
-        $request->setTrustedProxies($request->getClientIps());
+        $request->setTrustedProxies($request->getClientIps(), $request->HEADER_X_FORWARDED_AWS_ELB);
     }
 
     private function setTrustedProxyIpAddressesToAllIps($request)
